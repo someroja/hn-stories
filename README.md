@@ -1,10 +1,10 @@
-# HN Top Stories
+# hn-stories
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-🧪 The project explores the new experimental [App Router](https://beta.nextjs.org/docs/app-directory-roadmap)
+:alembic: The project explores the new experimental [App Router](https://beta.nextjs.org/docs/app-directory-roadmap) and uses React Server Components to fetch data on the server from the [Hacker News API](https://github.com/HackerNews/API).
 
-## 🧞 Commands
+## Commands
 
 All commands are run from the root of the project, from a terminal:
 
@@ -16,3 +16,7 @@ All commands are run from the root of the project, from a terminal:
 | `npm run format` | Format code with Prettier                               |
 | `npm run build`  | Generate an optimized production build                  |
 | `npm run start`  | Preview your production build locally, before deploying |
+
+## Deploy
+
+The `main` branch will automatically deploy on [Vercel](https://hn-stories.vercel.app).
