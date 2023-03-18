@@ -2,7 +2,7 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata = {
-  title: "HN Top Stories",
+  title: "HN top stories",
   description: "Freshly cooked top stories straight from the Hacker News API",
 };
 
