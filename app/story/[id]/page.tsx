@@ -1,7 +1,9 @@
 import CommentList from "$components/CommentList";
+import LoadingIndicator from "$components/LoadingIndicator";
 import SafeText from "$components/SafeText";
 import { getItem } from "$lib/api";
 import { ItemId, isStory, isStoryOrAsk } from "$lib/types";
+import { Suspense } from "react";
 
 interface StoryPageProps {
   params: { id: ItemId };
@@ -30,7 +32,9 @@ const StoryPage = async ({ params }: StoryPageProps) => {
       )}
       <aside>
         <p className="pt-6 pb-1 text-xs">{item.descendants} comments</p>
-        <CommentList ids={item.kids} />
+        <Suspense fallback={<LoadingIndicator text="Loading comments..." />}>
+          <CommentList ids={item.kids} />
+        </Suspense>
       </aside>
     </article>
   );
