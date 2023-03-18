@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import SafeText from "$components/SafeText";
 import { getItem, getTopStoryIds } from "$lib/api";
 import { isStoryOrAsk } from "$lib/types";
