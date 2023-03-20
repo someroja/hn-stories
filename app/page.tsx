@@ -38,7 +38,7 @@ const HomePage = async ({ searchParams }: HomePageProps) => {
 
   return (
     <nav>
-      <ul>
+      <ul className="flex flex-col gap-4">
         {stories.map((story) => (
           <li key={story.id}>
             <Link className="text-lg" href={`/story/${story.id}`}>
@@ -49,7 +49,7 @@ const HomePage = async ({ searchParams }: HomePageProps) => {
         {hasNextPage && (
           <li>
             <Link
-              className="mt-2 inline-block rounded bg-cyan-900 px-6 py-2 text-white"
+              className="rounded bg-cyan-900 px-6 py-2 text-white"
               href={`/?page=${pageNumber + 1}`}
             >
               More
