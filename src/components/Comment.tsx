@@ -1,7 +1,7 @@
-import CommentList from "$components/CommentList";
-import SafeText from "$components/SafeText";
-import { getItem } from "$lib/api";
-import { ItemId, isComment } from "$lib/types";
+import CommentList from "@/components/CommentList";
+import SafeText from "@/components/SafeText";
+import { getItem } from "@/lib/api";
+import { ItemId, isComment } from "@/lib/types";
 
 interface CommentProps {
   id: ItemId;

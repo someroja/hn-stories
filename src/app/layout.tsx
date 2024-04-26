@@ -1,9 +1,9 @@
-import "./globals.css";
 import Link from "next/link";
+import "./globals.css";
 
 export const metadata = {
   title: "HN top stories",
-  description: "Freshly cooked top stories straight from the Hacker News API",
+  description: "Freshly top stories straight from the Hacker News API",
 };
 
 export default function RootLayout({

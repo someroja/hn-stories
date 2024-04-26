@@ -1,8 +1,6 @@
-export const dynamic = "force-dynamic";
-
-import SafeText from "$components/SafeText";
-import { getItem, getTopStoryIds } from "$lib/api";
-import { isStoryOrAsk } from "$lib/types";
+import SafeText from "@/components/SafeText";
+import { getItem, getTopStoryIds } from "@/lib/api";
+import { isStoryOrAsk } from "@/lib/types";
 import Link from "next/link";
 
 type SearchParams = {
@@ -31,7 +29,7 @@ const HomePage = async ({ searchParams }: HomePageProps) => {
   const pageStoryIds = storyIds.slice(startIndex, endIndex);
 
   const stories = await Promise.all(
-    pageStoryIds.map((storyId) => getItem(storyId))
+    pageStoryIds.map((storyId) => getItem(storyId)),
   ).then((items) => items.filter(isStoryOrAsk));
 
   const hasNextPage = endIndex < storyIds.length;
