@@ -1,4 +1,4 @@
-import SafeText from "@/components/SafeText";
+import { SafeText } from "@/components/SafeText";
 import { getItem, getTopStoryIds } from "@/lib/api";
 import { isStoryOrAsk } from "@/lib/types";
 import Link from "next/link";
@@ -20,7 +20,7 @@ const getPageNumber = (searchParams?: SearchParams): number => {
   return isNaN(pageNumber) ? 1 : pageNumber;
 };
 
-const HomePage = async ({ searchParams }: HomePageProps) => {
+export default async function HomePage({ searchParams }: HomePageProps) {
   const storyIds = await getTopStoryIds();
   const pageNumber = getPageNumber(searchParams);
 
@@ -57,6 +57,4 @@ const HomePage = async ({ searchParams }: HomePageProps) => {
       </ul>
     </nav>
   );
-};
-
-export default HomePage;
+}

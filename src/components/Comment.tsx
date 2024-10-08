@@ -1,5 +1,5 @@
-import CommentList from "@/components/CommentList";
-import SafeText from "@/components/SafeText";
+import { CommentList } from "@/components/CommentList";
+import { SafeText } from "@/components/SafeText";
 import { getItem } from "@/lib/api";
 import { ItemId, isComment } from "@/lib/types";
 
@@ -7,7 +7,7 @@ interface CommentProps {
   id: ItemId;
 }
 
-const Comment = async ({ id }: CommentProps) => {
+export async function Comment({ id }: CommentProps) {
   const item = await getItem(id);
 
   if (!item || !isComment(item) || item.deleted) {
@@ -22,6 +22,4 @@ const Comment = async ({ id }: CommentProps) => {
       <CommentList className="pl-8" ids={item.kids} />
     </div>
   );
-};
-
-export default Comment;
+}

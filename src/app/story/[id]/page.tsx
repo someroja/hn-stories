@@ -1,6 +1,6 @@
-import CommentList from "@/components/CommentList";
-import LoadingIndicator from "@/components/LoadingIndicator";
-import SafeText from "@/components/SafeText";
+import { CommentList } from "@/components/CommentList";
+import { LoadingIndicator } from "@/components/LoadingIndicator";
+import { SafeText } from "@/components/SafeText";
 import { getItem } from "@/lib/api";
 import { ItemId, isStory, isStoryOrAsk } from "@/lib/types";
 import { Suspense } from "react";
@@ -9,7 +9,7 @@ interface StoryPageProps {
   params: { id: ItemId };
 }
 
-const StoryPage = async ({ params }: StoryPageProps) => {
+export default async function StoryPage({ params }: StoryPageProps) {
   const { id } = params;
   const item = await getItem(id);
 
@@ -38,6 +38,4 @@ const StoryPage = async ({ params }: StoryPageProps) => {
       </aside>
     </article>
   );
-};
-
-export default StoryPage;
+}

@@ -1,4 +1,4 @@
-import Comment from "@/components/Comment";
+import { Comment } from "@/components/Comment";
 import { ItemId } from "@/lib/types";
 
 interface CommentListProps {
@@ -6,7 +6,7 @@ interface CommentListProps {
   className?: string;
 }
 
-const CommentList = ({ ids, className }: CommentListProps) => {
+export function CommentList({ ids, className }: CommentListProps) {
   if (!ids) {
     return null;
   }
@@ -20,6 +20,4 @@ const CommentList = ({ ids, className }: CommentListProps) => {
       ))}
     </ul>
   );
-};
-
-export default CommentList;
+}

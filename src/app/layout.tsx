@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "HN top stories",
-  description: "Freshly top stories straight from the Hacker News API",
+  description: "Fresh top stories straight from the Hacker News API",
 };
 
 export default function RootLayout({

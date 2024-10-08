@@ -4,9 +4,7 @@ interface SafeTextProps {
   readonly text: string;
 }
 
-const SafeText = ({ text }: SafeTextProps) => {
+export function SafeText({ text }: SafeTextProps) {
   const sanitizedText = xss(text);
   return <div dangerouslySetInnerHTML={{ __html: sanitizedText }} />;
-};
-
-export default SafeText;
+}
