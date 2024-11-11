@@ -6,10 +6,11 @@ import { ItemId, isStory, isStoryOrAsk } from "@/lib/types";
 import { Suspense } from "react";
 
 interface StoryPageProps {
-  params: { id: ItemId };
+  params: Promise<{ id: ItemId }>;
 }
 
-export default async function StoryPage({ params }: StoryPageProps) {
+export default async function StoryPage(props: StoryPageProps) {
+  const params = await props.params;
   const { id } = params;
   const item = await getItem(id);
 

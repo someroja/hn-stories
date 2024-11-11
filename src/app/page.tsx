@@ -8,7 +8,7 @@ type SearchParams = {
 };
 
 interface HomePageProps {
-  searchParams?: SearchParams;
+  searchParams?: Promise<SearchParams>;
 }
 
 // Page size 30 for that classic HN experience :)
@@ -20,7 +20,8 @@ const getPageNumber = (searchParams?: SearchParams): number => {
   return isNaN(pageNumber) ? 1 : pageNumber;
 };
 
-export default async function HomePage({ searchParams }: HomePageProps) {
+export default async function HomePage(props: HomePageProps) {
+  const searchParams = await props.searchParams;
   const storyIds = await getTopStoryIds();
   const pageNumber = getPageNumber(searchParams);
 
