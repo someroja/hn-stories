@@ -48,7 +48,7 @@ export default async function HomePage(props: HomePageProps) {
         {hasNextPage && (
           <li>
             <Link
-              className="rounded bg-cyan-900 px-6 py-2 text-white"
+              className="rounded-sm bg-cyan-900 px-6 py-2 text-white"
               href={`/?page=${pageNumber + 1}`}
             >
               More

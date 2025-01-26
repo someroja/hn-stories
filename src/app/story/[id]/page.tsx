@@ -32,7 +32,7 @@ export default async function StoryPage(props: StoryPageProps) {
         <SafeText text={item.text} />
       )}
       <aside>
-        <p className="pb-1 pt-6 text-xs">{item.descendants} comments</p>
+        <p className="pt-6 pb-1 text-xs">{item.descendants} comments</p>
         <Suspense fallback={<LoadingIndicator text="Loading comments..." />}>
           <CommentList ids={item.kids} />
         </Suspense>

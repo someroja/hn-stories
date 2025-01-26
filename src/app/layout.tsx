@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-orange-50 md:p-4">
-      <body className="bg-white p-4 shadow md:container md:mx-auto">
+      <body className="bg-white p-4 shadow-sm md:container md:mx-auto">
         <header className="mb-4 text-5xl font-semibold text-orange-600">
           <Link href="/">HN top stories</Link>
         </header>
